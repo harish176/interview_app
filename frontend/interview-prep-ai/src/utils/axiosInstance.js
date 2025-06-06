@@ -2,7 +2,7 @@ import axios from 'axios';
 // import {BASE_URL} from "./apiPaths.js"
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-const axionsInstance = axios.create({
+const axiosInstance = axios.create({
     baseURL:BASE_URL,
     timeout:80000,
     headers:{
@@ -24,7 +24,7 @@ axiosInstance.interceptors.request.use(
     }
 );
 
-axionsInstance.interceptors.response.use(
+axiosInstance.interceptors.response.use(
     (response)=>{
         return response;
     },
@@ -42,4 +42,4 @@ axionsInstance.interceptors.response.use(
     }
 );
 
-export default axionsInstance;
+export default axiosInstance;
