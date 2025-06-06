@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {BASE_URL} from "./apiPaths.js"
+// import {BASE_URL} from "./apiPaths.js"
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const axionsInstance = axios.create({
     baseURL:BASE_URL,
@@ -10,7 +11,7 @@ const axionsInstance = axios.create({
     },
 });
 
-axionsInstance.interceptors.request.use(
+axiosInstance.interceptors.request.use(
     (config)=>{
         const accessToken = localStorage.getItem("token");
         if(accessToken){
