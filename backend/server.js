@@ -85,13 +85,13 @@ app.post("/api/ai/generate-explanation", protect, generateConceptExplanation);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ======== DEPLOY FRONTEND STATIC FILES (optional) ========
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "frontend/interview-prep-ai/dist")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "frontend", "interview-prep-ai", "dist", "index.html"))
-  );
-}
+// const __dirname1 = path.resolve();
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname1, "frontend/interview-prep-ai/dist")));
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname1, "frontend", "interview-prep-ai", "dist", "index.html"))
+//   );
+// }
 
 // ======== START SERVER ========
 const PORT = process.env.PORT || 5000;
